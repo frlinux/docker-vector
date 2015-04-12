@@ -23,19 +23,12 @@ ENV PATH /usr/local/bin:$PATH
 RUN ln -s /usr/bin/nodejs /usr/local/bin/node
 
 # Clone netflix vector and install
-RUN git clone https://github.com/Netflix/vector.git
+RUN cd /opt/ && git clone https://github.com/Netflix/vector.git
 
 #RUN git clone https://github.com/Netflix/vector.git
-RUN cd vector
-RUN /usr/local/bin/bower --allow-root install
-RUN npm install
-RUN npm install -g gulp
-RUN gulp
-RUN cd vector/app
-RUN python -m SimpleHTTPServer 8080
+RUN cd /opt/vector && /usr/local/bin/bower --allow-root install --config.interactive=false
+RUN cd /opt/vector && npm install
+RUN cd /opt/vector && npm install -g gulp
 
 # Port to expose 
-#EXPOSE 8080
-
-# Set the entrypoint 
-ENTRYPOINT bash
+EXPOSE 8080
