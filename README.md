@@ -1,4 +1,12 @@
 # docker-vector
 Dockerfile to create and run Netflix vector
 
-File and documentation coming very soon
+# building
+cd docker-vector
+docker build -t vector_img . 
+
+# running
+docker run -name vector_ins -t -i -p 45001:8080 vector_img 
+
+# questions
+mail me. 
