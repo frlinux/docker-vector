@@ -11,7 +11,9 @@ docker run -name vector_ins -t -i -p 45001:8080 vector_img
 
 cd /opt/vector/
 
-gulp
+gulp && 
+
+service pcp start
 
 # questions
 mail me. 
