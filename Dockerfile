@@ -10,7 +10,7 @@ RUN echo "deb http://ie.archive.ubuntu.com/ubuntu vivid-security main restricted
 MAINTAINER FRLinux
 
 # Update the default application repository sources list
-RUN apt-get update
+RUN apt-get update -y
 
 # Install debs
 RUN apt-get install -y pcp git build-essential wget npm
